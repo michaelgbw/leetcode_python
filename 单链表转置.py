@@ -15,10 +15,9 @@ def initListnode(myList=[1,2,3,4,5]):
     return head
 
 def showList(head):
-    while head.next:
+    while head:
         print(head.val)
         head = head.next
-    print(head.val)
 
 def listReversed(head):
     if head is None:
