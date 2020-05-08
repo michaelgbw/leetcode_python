@@ -52,9 +52,10 @@ class Solution:
         while normal.next:
             slow = slow.next
             normal = normal.next
-        node = slow.next
-        slow.next = node.next
-        node.next = node
+        # node = slow.next
+        # slow.next = node.next
+        # node.next = node
+        slow.next = slow.next.next
         return head0.next
 
 
