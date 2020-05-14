@@ -36,28 +36,6 @@
 # @lc code=start
 
 class Solution:
-    #暴力法超时
-    # def threeSum2(self, nums):
-    #     nums.sort()
-    #     # print(nums)
-    #     a = 0
-    #     b = 0
-    #     c = 0
-    #     list_len = len(nums)
-    #     res_list = []
-    #     if list_len<=2:
-    #         return []
-    #     for i in range(list_len):
-    #         a = nums[i]
-    #         if nums[i] > 0:
-    #             break
-    #         for j in range(i+1,list_len):
-    #             b = nums[j]
-    #             c = 0 - (a + b)
-    #             if c in nums[j+1:]:
-    #                 res_list.append((a,b,c))
-        
-    #     return list(set(res_list))
     def threeSum(self, nums):
         nums.sort()
         res =[]
