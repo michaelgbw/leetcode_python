@@ -12,7 +12,7 @@
 # Total Accepted:    51.8K
 # Total Submissions: 109.3K
 # Testcase Example:  '["LRUCache","put","put","get","put","get","put","get","get","get"]\n' +
-  '[[2],[1,1],[2,2],[1],[3,3],[2],[4,4],[1],[3],[4]]'
+#   '[[2],[1,1],[2,2],[1],[3,3],[2],[4,4],[1],[3],[4]]'
 #
 # 运用你所掌握的数据结构，设计和实现一个  LRU (最近最少使用) 缓存机制。它应该支持以下操作： 获取数据 get 和 写入数据 put 。
 # 
@@ -48,14 +48,14 @@
 # @lc code=start
 class LRUCache:
 
-    def __init__(self, capacity: int):
+    def __init__(self, capacity):
         self.maxlength = capacity
         self.array = {}
         self.array_list = []
 
-    def get(self, key: int) -> int:
+    def get(self, key):
         value = self.array.get(key)
-        # 如果密钥存在 将该密钥移到队列首
+        #如果密钥存在 将该密钥移到队列首
         if value and self.array_list[0] is not key:
             index = self.array_list.index(key)
             self.array_list.pop(index)
@@ -65,7 +65,7 @@ class LRUCache:
         return value
 
 
-    def put(self, key: int, value: int) -> None:
+    def put(self, key, value):
         # 如果重复
         if self.array.get(key) is not None:
             index = self.array_list.index(key)

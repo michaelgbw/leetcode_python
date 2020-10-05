@@ -38,8 +38,8 @@
 #     def __init__(self, x):
 #         self.val = x
 #         self.next = None
-
-class Solution:
+#还有种方法就是不用快慢指针，直接循环两遍，假设长度为k，那么第一次遍历k-1,到头，第二次遍历k+1,到0时候，就找到了要删除的节点的前一个节点
+class Solution
     def removeNthFromEnd(self, head, n):
         node_list = []
         head0 = ListNode(0)

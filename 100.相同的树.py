@@ -60,11 +60,46 @@
 #         self.right = None
 
 class Solution:
+    # def isSameTree2(self, p, q):
+    #     if p is None or q is None:
+    #         return p == q
+    #     elif p.val == q.val:
+    #         return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+    #     return False
+
+
+    #并发版本
     def isSameTree(self, p, q):
-        if p is None or q is None:
-            return p == q
-        elif p.val == q.val:
-            return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
-        return False
+
+        p_iter = Iterable(p)
+        q_iter = Iterable(q)
+
+        try:
+            while True:
+                p_v = p_iter.next()
+                q_v = q_iter.next()
+                if p_v != q_v:
+                    return False 
+        except:
+            return True
+        return True 
+
+
+class Iterable(object):
+    def __init__(self,p):
+        self.p = p
+        self.stack = [p]
+    def next(self):
+        if not self.stack:
+            raise StopIteration()
+        top = self.stack.pop()
+        if top is None:
+            return top
+        
+        self.stack.append(top.left)
+        self.stack.append(top.right)
+        return top.val
+    
+
 # @lc code=end
 
