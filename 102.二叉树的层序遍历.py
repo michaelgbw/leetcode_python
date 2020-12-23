@@ -33,7 +33,6 @@ class Solution:
                 if tmp.right:
                     queue.append(tmp.right)
                 i += 1
-            print(rank_res)
             res.append(rank_res)
         return res
 # @lc code=end
